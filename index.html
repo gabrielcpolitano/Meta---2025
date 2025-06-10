@@ -1,88 +1,112 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Politano.tech - Simplifique os Pedidos no seu Restaurante</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    function enviarFormulario(event) {
-      event.preventDefault();
-      const nome = document.getElementById('nome').value;
-      const email = document.getElementById('email').value;
-      const mensagem = document.getElementById('mensagem').value;
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projetos de Estágio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-800 font-sans">
+    <header class="bg-blue-600 text-white p-6 shadow">
+      <h1 class="text-3xl font-bold">Plano de Projetos - Preparo para Estágio</h1>
+      <p class="text-sm mt-1">Organização por mês e tecnologia</p>
+    </header>
 
-      if (nome && email && mensagem) {
-        alert('Obrigado, ' + nome + '! Sua mensagem foi enviada com sucesso.');
-        document.getElementById('formulario').reset();
-      } else {
-        alert('Por favor, preencha todos os campos.');
-      }
-    }
-  </script>
-</head>
-<body class="bg-gradient-to-r from-indigo-600 to-purple-700 text-white font-sans antialiased">
+    <main class="max-w-6xl mx-auto p-6 space-y-12">
 
-  <header class="container mx-auto px-4 py-6 flex justify-between items-center">
-    <h1 class="text-2xl md:text-3xl font-bold">Politano.tech</h1>
-  </header>
+      <!-- MÊS 1 -->
+      <section>
+        <h2 class="text-2xl font-semibold text-blue-700 mb-4">📅 Mês 1: Fundamentos + Páginas Estáticas</h2>
+        <div class="grid gap-6 md:grid-cols-3">
+          <!-- Projeto 1 -->
+          <div class="bg-white rounded-lg shadow p-4">
+            <img src="https://via.placeholder.com/300x150" alt="Portfólio Pessoal" class="rounded mb-3">
+            <h3 class="text-lg font-bold">Portfólio Pessoal</h3>
+            <p class="mb-2 text-sm">Bio, contato, imagem e links. Deploy no GitHub Pages.</p>
+            <a href="https://github.com/seuusuario/portfolio" class="text-blue-600 hover:underline text-sm" target="_blank">🔗 Ver repositório</a>
+          </div>
 
-  <section class="container mx-auto px-4 py-16 text-center">
-    <h2 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">Simplifique os pedidos no seu restaurante</h2>
-    <p class="text-base md:text-lg mb-8 max-w-2xl mx-auto">
-      Com a Politano.tech, o cliente faz o pedido pelo cardápio digital e a cozinha recebe automaticamente.
-      Pagamento via PIX e notificação para o garçom — tudo simples e eficiente.
-    </p>
-    <a href="#formulario" class="inline-block bg-white text-indigo-700 font-bold px-6 py-3 rounded-lg hover:bg-gray-100 transition">
-      Experimente Gratuitamente
-    </a>
-  </section>
+          <!-- Projeto 2 -->
+          <div class="bg-white rounded-lg shadow p-4">
+            <img src="https://via.placeholder.com/300x150" alt="Landing Page" class="rounded mb-3">
+            <h3 class="text-lg font-bold">Landing Page de Produto</h3>
+            <p class="mb-2 text-sm">Design responsivo com seções, preços e FAQ.</p>
+            <a href="https://github.com/seuusuario/landing-page" class="text-blue-600 hover:underline text-sm" target="_blank">🔗 Ver repositório</a>
+          </div>
 
-  <section class="container mx-auto px-4 grid gap-6 md:grid-cols-3 py-12">
-    <div class="bg-white text-gray-800 rounded-2xl shadow-lg p-6 text-center transform hover:scale-105 transition">
-      <div class="bg-indigo-100 p-4 rounded-full inline-block mb-4 text-2xl">
-        📱
-      </div>
-      <h4 class="text-lg font-semibold mb-2">Cardápio Digital</h4>
-      <p class="text-sm">Cardápio via QR Code sem necessidade de aplicativo. Personalizável e intuitivo.</p>
-    </div>
+          <!-- Projeto 3 -->
+          <div class="bg-white rounded-lg shadow p-4">
+            <img src="https://via.placeholder.com/300x150" alt="Blog Estático" class="rounded mb-3">
+            <h3 class="text-lg font-bold">Blog Estático</h3>
+            <p class="mb-2 text-sm">Blog com 2–3 posts usando HTML semântico.</p>
+            <a href="https://github.com/seuusuario/blog-estatico" class="text-blue-600 hover:underline text-sm" target="_blank">🔗 Ver repositório</a>
+          </div>
+        </div>
+      </section>
 
-    <div class="bg-white text-gray-800 rounded-2xl shadow-lg p-6 text-center transform hover:scale-105 transition">
-      <div class="bg-indigo-100 p-4 rounded-full inline-block mb-4 text-2xl">
-        ✅
-      </div>
-      <h4 class="text-lg font-semibold mb-2">Pedidos Automatizados</h4>
-      <p class="text-sm">Pedido feito pelo cliente chega direto na cozinha. Garçom recebe notificação quando estiver pronto.</p>
-    </div>
+      <!-- MÊS 2 -->
+      <section>
+        <h2 class="text-2xl font-semibold text-green-700 mb-4">📅 Mês 2: JavaScript e Interatividade</h2>
+        <div class="grid gap-6 md:grid-cols-3">
+          <!-- Projeto 1 -->
+          <div class="bg-white rounded-lg shadow p-4">
+            <img src="https://via.placeholder.com/300x150" alt="To-Do List" class="rounded mb-3">
+            <h3 class="text-lg font-bold">To-Do List</h3>
+            <p class="mb-2 text-sm">Adicionar/remover tarefas com LocalStorage.</p>
+            <a href="https://github.com/seuusuario/todo-app" class="text-blue-600 hover:underline text-sm" target="_blank">🔗 Ver repositório</a>
+          </div>
 
-    <div class="bg-white text-gray-800 rounded-2xl shadow-lg p-6 text-center transform hover:scale-105 transition">
-      <div class="bg-indigo-100 p-4 rounded-full inline-block mb-4 text-2xl">
-        💸
-      </div>
-      <h4 class="text-lg font-semibold mb-2">Pagamento via PIX</h4>
-      <p class="text-sm">Pagamento ágil, seguro e sem intermediários através do PIX.</p>
-    </div>
-  </section>
+          <!-- Projeto 2 -->
+          <div class="bg-white rounded-lg shadow p-4">
+            <img src="https://via.placeholder.com/300x150" alt="Calculadora" class="rounded mb-3">
+            <h3 class="text-lg font-bold">Calculadora Simples</h3>
+            <p class="mb-2 text-sm">Operações básicas e tratamento de erros.</p>
+            <a href="https://github.com/seuusuario/calculadora-js" class="text-blue-600 hover:underline text-sm" target="_blank">🔗 Ver repositório</a>
+          </div>
 
-  <section class="container mx-auto px-4 py-16">
-    <h3 class="text-2xl md:text-3xl font-bold text-center mb-8">Comece agora mesmo!</h3>
-    <form id="formulario" onsubmit="enviarFormulario(event)" class="max-w-lg mx-auto bg-white text-gray-800 p-6 md:p-8 rounded-2xl shadow-lg space-y-4">
-      <input type="text" id="nome" placeholder="Nome do Restaurante" class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-      <input type="email" id="email" placeholder="E-mail" class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-      <textarea id="mensagem" rows="4" placeholder="Fale um pouco sobre o seu restaurante..." class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
-      <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-lg hover:bg-indigo-700 transition">
-        Solicitar Demonstração
-      </button>
-    </form>
-  </section>
+          <!-- Projeto 3 -->
+          <div class="bg-white rounded-lg shadow p-4">
+            <img src="https://via.placeholder.com/300x150" alt="App de Clima" class="rounded mb-3">
+            <h3 class="text-lg font-bold">App de Clima</h3>
+            <p class="mb-2 text-sm">Consulta de clima por cidade usando API.</p>
+            <a href="https://github.com/seuusuario/app-clima" class="text-blue-600 hover:underline text-sm" target="_blank">🔗 Ver repositório</a>
+          </div>
+        </div>
+      </section>
 
-  <footer class="container mx-auto px-4 py-8 text-center text-xs md:text-sm">
-    © <span id="ano"></span> Politano.tech — Todos os direitos reservados.
-  </footer>
+      <!-- MÊS 3 -->
+      <section>
+        <h2 class="text-2xl font-semibold text-purple-700 mb-4">📅 Mês 3: Projetos com React</h2>
+        <div class="grid gap-6 md:grid-cols-3">
+          <!-- Projeto 1 -->
+          <div class="bg-white rounded-lg shadow p-4">
+            <img src="https://via.placeholder.com/300x150" alt="Dashboard" class="rounded mb-3">
+            <h3 class="text-lg font-bold">Dashboard de Finanças</h3>
+            <p class="mb-2 text-sm">Gráficos, filtros e tabelas com React.</p>
+            <a href="https://github.com/seuusuario/dashboard-financas" class="text-blue-600 hover:underline text-sm" target="_blank">🔗 Ver repositório</a>
+          </div>
 
-  <script>
-    document.getElementById('ano').textContent = new Date().getFullYear();
-  </script>
+          <!-- Projeto 2 -->
+          <div class="bg-white rounded-lg shadow p-4">
+            <img src="https://via.placeholder.com/300x150" alt="App de Tarefas" class="rounded mb-3">
+            <h3 class="text-lg font-bold">App de Tarefas (React)</h3>
+            <p class="mb-2 text-sm">CRUD com React e LocalStorage/API.</p>
+            <a href="https://github.com/seuusuario/app-tarefas-react" class="text-blue-600 hover:underline text-sm" target="_blank">🔗 Ver repositório</a>
+          </div>
 
-</body>
+          <!-- Projeto 3 -->
+          <div class="bg-white rounded-lg shadow p-4">
+            <img src="https://via.placeholder.com/300x150" alt="Portfólio React" class="rounded mb-3">
+            <h3 class="text-lg font-bold">Portfólio com React</h3>
+            <p class="mb-2 text-sm">Versão moderna com animações e routing.</p>
+            <a href="https://github.com/seuusuario/portfolio-react" class="text-blue-600 hover:underline text-sm" target="_blank">🔗 Ver repositório</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-200 text-center p-4 mt-10 text-sm">
+      © 2025 - Desenvolvido para o plano de estágio
+    </footer>
+  </body>
 </html>
