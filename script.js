@@ -18,7 +18,14 @@ const tarefasPorSemana = {
     { id: "semana1-t16", texto: "1 capítulo da bíblia" },
     { id: "semana1-t17", texto: "1 capítulo da bíblia" },
     { id: "semana1-t18", texto: "1 capítulo da bíblia" },
-    { id: "semana1-t19", texto: "Fazer visitas" }
+    { id: "semana1-t19", texto: "Fazer visitas" },
+    { id: "semana1-t20", texto: "50 abdominais" },
+    { id: "semana1-t21", texto: "50 abdominais" },
+    { id: "semana1-t22", texto: "50 abdominais" },
+    { id: "semana1-t23", texto: "50 abdominais" },
+    { id: "semana1-t24", texto: "50 abdominais" },
+    { id: "semana1-t25", texto: "50 abdominais" },
+    { id: "semana1-t26", texto: "50 abdominais" }
   ],
   semana2: [
     { id: "semana2-t1", texto: "20 flashcards em inglês" },
@@ -39,7 +46,14 @@ const tarefasPorSemana = {
     { id: "semana2-t16", texto: "1 capítulo da bíblia" },
     { id: "semana2-t17", texto: "1 capítulo da bíblia" },
     { id: "semana2-t18", texto: "1 capítulo da bíblia" },
-    { id: "semana2-t19", texto: "Fazer visitas" }
+    { id: "semana2-t19", texto: "Fazer visitas" },
+    { id: "semana2-t20", texto: "50 abdominais" },
+    { id: "semana2-t21", texto: "50 abdominais" },
+    { id: "semana2-t22", texto: "50 abdominais" },
+    { id: "semana2-t23", texto: "50 abdominais" },
+    { id: "semana2-t24", texto: "50 abdominais" },
+    { id: "semana2-t25", texto: "50 abdominais" },
+    { id: "semana2-t26", texto: "50 abdominais" }
   ],
   semana3: [
     { id: "semana3-t1", texto: "20 flashcards em inglês" },
@@ -60,7 +74,14 @@ const tarefasPorSemana = {
     { id: "semana3-t16", texto: "1 capítulo da bíblia" },
     { id: "semana3-t17", texto: "1 capítulo da bíblia" },
     { id: "semana3-t18", texto: "1 capítulo da bíblia" },
-    { id: "semana3-t19", texto: "Fazer visitas" }
+    { id: "semana3-t19", texto: "Fazer visitas" },
+    { id: "semana3-t20", texto: "50 abdominais" },
+    { id: "semana3-t21", texto: "50 abdominais" },
+    { id: "semana3-t22", texto: "50 abdominais" },
+    { id: "semana3-t23", texto: "50 abdominais" },
+    { id: "semana3-t24", texto: "50 abdominais" },
+    { id: "semana3-t25", texto: "50 abdominais" },
+    { id: "semana3-t26", texto: "50 abdominais" }
   ],
   semana4: [
     { id: "semana4-t1", texto: "20 flashcards em inglês" },
@@ -81,7 +102,14 @@ const tarefasPorSemana = {
     { id: "semana4-t16", texto: "1 capítulo da bíblia" },
     { id: "semana4-t17", texto: "1 capítulo da bíblia" },
     { id: "semana4-t18", texto: "1 capítulo da bíblia" },
-    { id: "semana4-t19", texto: "Fazer visitas" }
+    { id: "semana4-t19", texto: "Fazer visitas" },
+    { id: "semana4-t20", texto: "50 abdominais" },
+    { id: "semana4-t21", texto: "50 abdominais" },
+    { id: "semana4-t22", texto: "50 abdominais" },
+    { id: "semana4-t23", texto: "50 abdominais" },
+    { id: "semana4-t24", texto: "50 abdominais" },
+    { id: "semana4-t25", texto: "50 abdominais" },
+    { id: "semana4-t26", texto: "50 abdominais" }
   ]
 };
 
