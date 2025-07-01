@@ -27,7 +27,9 @@ const tarefasPorSemana = {
     { id: "semana1-t25", texto: "Mandar currículo" },
     { id: "semana1-t26", texto: "Mandar currículo" },
     { id: "semana1-t27", texto: "Mandar currículo" },
-    { id: "semana1-t28", texto: "Mandar currículo" }
+    { id: "semana1-t28", texto: "Mandar currículo" },
+    { id: "semana1-t29", texto: "Fazer pastelão" },
+    { id: "semana1-t30", texto: "Fazer pastelão" }
   ],
   semana2: [
     { id: "semana2-t1", texto: "20 flashcards em inglês" },
@@ -57,7 +59,9 @@ const tarefasPorSemana = {
     { id: "semana2-t25", texto: "Mandar currículo" },
     { id: "semana2-t26", texto: "Mandar currículo" },
     { id: "semana2-t27", texto: "Mandar currículo" },
-    { id: "semana2-t28", texto: "Mandar currículo" }
+    { id: "semana2-t28", texto: "Mandar currículo" },
+    { id: "semana2-t29", texto: "Fazer pastelão" },
+    { id: "semana2-t30", texto: "Fazer pastelão" }
   ],
   semana3: [
     { id: "semana3-t1", texto: "20 flashcards em inglês" },
@@ -87,7 +91,9 @@ const tarefasPorSemana = {
     { id: "semana3-t25", texto: "Mandar currículo" },
     { id: "semana3-t26", texto: "Mandar currículo" },
     { id: "semana3-t27", texto: "Mandar currículo" },
-    { id: "semana3-t28", texto: "Mandar currículo" }
+    { id: "semana3-t28", texto: "Mandar currículo" },
+    { id: "semana3-t29", texto: "Fazer pastelão" },
+    { id: "semana3-t30", texto: "Fazer pastelão" }
   ],
   semana4: [
     { id: "semana4-t1", texto: "20 flashcards em inglês" },
@@ -117,7 +123,9 @@ const tarefasPorSemana = {
     { id: "semana4-t25", texto: "Mandar currículo" },
     { id: "semana4-t26", texto: "Mandar currículo" },
     { id: "semana4-t27", texto: "Mandar currículo" },
-    { id: "semana4-t28", texto: "Mandar currículo" }
+    { id: "semana4-t28", texto: "Mandar currículo" },
+    { id: "semana4-t29", texto: "Fazer pastelão" },
+    { id: "semana4-t30", texto: "Fazer pastelão" }
   ]
 };
 
