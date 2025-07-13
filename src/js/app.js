@@ -379,16 +379,8 @@ function updateDisplay() {
     const currentLevel = getCurrentLevel();
     const xpInCurrentLevel = totalXp - currentLevel.min;
     const xpNeededForCurrentLevel = currentLevel.max - currentLevel.min;
-    
-    let xpPercentage = 0;
-    if (currentLevel.max === Infinity) {
-        // Se for o nível máximo (ARQUIMAGO), mostrar 100%
-        xpPercentage = 100;
-    } else {
-        xpPercentage = (xpInCurrentLevel / xpNeededForCurrentLevel) * 100;
-    }
-    
-    elements.xpBar.style.width = Math.min(Math.max(xpPercentage, 0), 100) + '%';
+    const xpPercentage = (xpInCurrentLevel / xpNeededForCurrentLevel) * 100;
+    elements.xpBar.style.width = Math.min(xpPercentage, 100) + '%';
     
     // Nível
     elements.userLevel.textContent = currentLevel.level;
