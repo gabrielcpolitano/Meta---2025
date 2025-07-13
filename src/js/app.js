@@ -272,10 +272,10 @@ function createConfetti() {
         setTimeout(() => {
             const confetti = document.createElement('div');
             confetti.style.position = 'fixed';
-            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.left = Math.random() * 90 + 5 + '%';
             confetti.style.top = '-10px';
-            confetti.style.width = '10px';
-            confetti.style.height = '10px';
+            confetti.style.width = '8px';
+            confetti.style.height = '8px';
             confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
             confetti.style.pointerEvents = 'none';
             confetti.style.zIndex = '9999';
@@ -295,9 +295,11 @@ function createConfetti() {
                 confetti.style.top = pos + 'px';
                 confetti.style.transform = `rotate(${rotation}deg)`;
                 
-                if (pos > window.innerHeight) {
+                if (pos > window.innerHeight + 50) {
                     clearInterval(fall);
-                    document.body.removeChild(confetti);
+                    if (document.body.contains(confetti)) {
+                        document.body.removeChild(confetti);
+                    }
                 }
             }, 16);
         }, i * 50);
