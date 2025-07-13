@@ -1,177 +1,530 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Plano de Estágio - Projetos</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon"
-    href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/250px-Flag_of_Italy.svg.png"
-    type="image/png">
-  <style>
-    .checkbox-item {
-      transition: all 0.3s ease;
-    }
-
-    .checkbox-item:hover {
-      background-color: #f8fafc;
-      transform: translateX(4px);
-    }
-
-    .checkbox-item.completed {
-      opacity: 0.7;
-      text-decoration: line-through;
-    }
-
-    .progress-bar {
-      transition: width 0.5s ease;
-    }
-
-    .section-card {
-      transition: all 0.3s ease;
-      border-left: 4px solid transparent;
-    }
-
-    .section-card:hover {
-      border-left-color: #3b82f6;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏰 Trilha de Pergaminhos - Jornada do Aventureiro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Configurações de fonte */
+        .font-medieval { font-family: 'Cinzel', serif; }
+        .font-decorative { font-family: 'Cinzel Decorative', serif; }
+        .font-parchment { font-family: 'Crimson Text', serif; }
+        
+        /* Cores personalizadas */
+        .text-parchment { color: #3d2914; }
+        .text-parchment-light { color: #654321; }
+        .text-gold { color: #ffd700; }
+        .text-leather { color: #8b4513; }
+        .bg-parchment { background-color: #f4f1e8; }
+        .bg-leather { background-color: #654321; }
+        .bg-gold { background-color: #ffd700; }
+        
+        /* Fundo animado com gradientes e partículas */
+        .animated-bg {
+            background: linear-gradient(45deg, #2d1810, #3d2914, #654321, #8b4513);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Partículas flutuantes */
+        .floating-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.8) 0%, rgba(255, 215, 0, 0.2) 50%, transparent 100%);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+        
+        .particle:nth-child(1) { width: 4px; height: 4px; left: 10%; animation-delay: 0s; animation-duration: 25s; }
+        .particle:nth-child(2) { width: 6px; height: 6px; left: 20%; animation-delay: 2s; animation-duration: 30s; }
+        .particle:nth-child(3) { width: 3px; height: 3px; left: 30%; animation-delay: 4s; animation-duration: 20s; }
+        .particle:nth-child(4) { width: 5px; height: 5px; left: 40%; animation-delay: 6s; animation-duration: 35s; }
+        .particle:nth-child(5) { width: 4px; height: 4px; left: 50%; animation-delay: 8s; animation-duration: 28s; }
+        .particle:nth-child(6) { width: 7px; height: 7px; left: 60%; animation-delay: 10s; animation-duration: 22s; }
+        .particle:nth-child(7) { width: 3px; height: 3px; left: 70%; animation-delay: 12s; animation-duration: 32s; }
+        .particle:nth-child(8) { width: 5px; height: 5px; left: 80%; animation-delay: 14s; animation-duration: 26s; }
+        .particle:nth-child(9) { width: 4px; height: 4px; left: 90%; animation-delay: 16s; animation-duration: 24s; }
+        .particle:nth-child(10) { width: 6px; height: 6px; left: 15%; animation-delay: 18s; animation-duration: 29s; }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Névoa sutil */
+        .mist-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(244, 241, 232, 0.1) 50%, rgba(244, 241, 232, 0.2) 100%);
+            animation: mistMove 30s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        @keyframes mistMove {
+            0%, 100% { transform: rotate(0deg); opacity: 0.3; }
+            50% { transform: rotate(2deg); opacity: 0.5; }
+        }
+        
+        /* Efeito de pergaminho */
+        .parchment-card {
+            background: linear-gradient(135deg, #f4f1e8 0%, #e8e2d0 100%);
+            border: 3px solid #8b4513;
+            border-radius: 15px;
+            box-shadow: 
+                0 8px 32px rgba(139, 69, 19, 0.3),
+                inset 0 2px 4px rgba(255, 255, 255, 0.3),
+                inset 0 -2px 4px rgba(139, 69, 19, 0.2);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .parchment-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #b8860b, #daa520, #ffd700, #daa520, #b8860b);
+            border-radius: 18px;
+            z-index: -1;
+            opacity: 0.6;
+        }
+        
+        /* Header de couro */
+        .leather-header {
+            background: linear-gradient(135deg, #654321 0%, #8b4513 50%, #654321 100%);
+            border-bottom: 4px solid #b8860b;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 20;
+        }
+        
+        /* Botões medievais */
+        .medieval-btn {
+            background: linear-gradient(135deg, #8b4513 0%, #a0522d 50%, #8b4513 100%);
+            border: 2px solid #b8860b;
+            color: #f4f1e8;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            box-shadow: 
+                0 4px 8px rgba(0, 0, 0, 0.3),
+                inset 0 2px 4px rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 15;
+        }
+        
+        .medieval-btn:hover {
+            background: linear-gradient(135deg, #a0522d 0%, #cd853f 50%, #a0522d 100%);
+            transform: translateY(-2px);
+            box-shadow: 
+                0 6px 12px rgba(0, 0, 0, 0.4),
+                inset 0 2px 4px rgba(255, 255, 255, 0.3);
+        }
+        
+        .medieval-btn:active {
+            transform: translateY(0);
+            box-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.3),
+                inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Certificados */
+        .certificate-pending {
+            background: linear-gradient(135deg, #696969 0%, #2f4f4f 100%);
+            border: 2px solid #555;
+            color: #ccc;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        
+        .certificate-completed {
+            background: linear-gradient(135deg, #228b22 0%, #32cd32 50%, #228b22 100%);
+            border: 2px solid #ffd700;
+            color: #f4f1e8;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        }
+        
+        /* Animações */
+        .float {
+            animation: float-gentle 6s ease-in-out infinite;
+        }
+        
+        @keyframes float-gentle {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .glow {
+            animation: glow-pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes glow-pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.6); }
+        }
+        
+        /* Estados de ritmo */
+        .status-advanced {
+            border-color: #228b22 !important;
+            background: linear-gradient(135deg, #f4f1e8 0%, #e8f5e8 100%) !important;
+        }
+        
+        .status-ontime {
+            border-color: #daa520 !important;
+            background: linear-gradient(135deg, #f4f1e8 0%, #f5f5dc 100%) !important;
+        }
+        
+        .status-behind {
+            border-color: #dc143c !important;
+            background: linear-gradient(135deg, #f4f1e8 0%, #ffe8e8 100%) !important;
+        }
+        
+        /* Controles de áudio */
+        .audio-controls {
+            background: linear-gradient(135deg, #654321 0%, #8b4513 100%);
+            border: 2px solid #b8860b;
+            border-radius: 10px;
+            padding: 8px 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .audio-toggle {
+            background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+            border: 1px solid #b8860b;
+            color: #f4f1e8;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            transition: all 0.3s ease;
+        }
+        
+        .audio-toggle:hover {
+            background: linear-gradient(135deg, #a0522d 0%, #cd853f 100%);
+            transform: translateY(-1px);
+        }
+        
+        .audio-toggle.playing {
+            animation: pulse-audio 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-audio {
+            0%, 100% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+            50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); }
+        }
+        
+        /* Volume slider */
+        .volume-slider {
+            width: 80px;
+            height: 4px;
+            background: #654321;
+            border-radius: 2px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #ffd700;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .volume-slider::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: #ffd700;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Modal de conquista */
+        .achievement-modal {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 50;
+        }
+        
+        .achievement-content {
+            background: linear-gradient(135deg, #f4f1e8 0%, #e8e2d0 100%);
+            border: 4px solid #ffd700;
+            border-radius: 20px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                0 0 40px rgba(255, 215, 0, 0.3);
+            animation: achievement-appear 0.5s ease-out;
+        }
+        
+        @keyframes achievement-appear {
+            0% {
+                transform: scale(0.5) rotate(-10deg);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+        
+        /* Sombras de texto melhoradas */
+        .text-shadow-strong {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 8px rgba(255, 215, 0, 0.3);
+        }
+        
+        .text-shadow-medium {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6), 0 0 6px rgba(255, 215, 0, 0.2);
+        }
+        
+        .text-shadow-light {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .parchment-card {
+                margin: 8px;
+                padding: 16px;
+            }
+            
+            .medieval-btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+            
+            .audio-controls {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
 </head>
-
-<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
-  <!-- Header -->
-  <header class="bg-white shadow-lg border-b-4 border-blue-500">
-    <div class="max-w-6xl mx-auto px-6 py-8">
-      <h1 class="text-4xl font-bold text-gray-800 mb-2">🎯 Plano de Estágio</h1>
-      <p class="text-gray-600 text-lg">Preparação para Front-End com foco em React e Next.js</p>
-
-      <!-- Progress Overview -->
-      <div class="mt-6 bg-gray-100 rounded-lg p-4">
-        <div class="flex justify-between items-center mb-2">
-          <span class="text-sm font-medium text-gray-700">Progresso Geral</span>
-          <span id="progress-text" class="text-sm font-medium text-blue-600">0%</span>
-        </div>
-        <div class="w-full bg-gray-200 rounded-full h-3">
-          <div id="progress-bar" class="progress-bar bg-gradient-to-r from-blue-500 to-indigo-600 h-3 rounded-full"
-            style="width: 0%"></div>
-        </div>
-      </div>
+<body class="animated-bg min-h-screen">
+    <!-- Partículas flutuantes -->
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
     </div>
-  </header>
+    
+    <!-- Névoa sutil -->
+    <div class="mist-overlay"></div>
+    
+    <!-- Áudio de fundo -->
+    <audio id="background-music" loop preload="auto">
+        <source src="src/audio/Our_Mountain_v003_Looping.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
 
-  <main class="max-w-6xl mx-auto px-6 py-8 space-y-8">
-
-    <!-- Objetivos Principais -->
-    <section class="section-card bg-white rounded-xl shadow-lg p-6">
-      <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
-        <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">1</span>
-        Objetivos Principais
-      </h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-blue-50 rounded-lg p-4">
-          <h3 class="font-semibold text-blue-800 mb-2">🎯 Tecnologias Foco</h3>
-          <ul class="space-y-2 text-gray-700">
-            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> React.js</li>
-            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Next.js</li>
-            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> JavaScript ES6+</li>
-          </ul>
+    <!-- Header -->
+    <header class="leather-header p-4 mb-8">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="text-center md:text-left mb-4 md:mb-0">
+                <h1 class="font-decorative text-3xl md:text-4xl text-gold text-shadow-strong">
+                    🏰 TRILHA DE PERGAMINHOS
+                </h1>
+                <p class="font-parchment text-lg text-parchment-light mt-2 text-shadow-medium">
+                    Jornada do Aventureiro
+                </p>
+            </div>
+            
+            <!-- Controles de Áudio -->
+            <div class="audio-controls flex items-center gap-3">
+                <span class="text-gold font-medieval text-sm">🎵</span>
+                <button id="audio-toggle" class="audio-toggle">
+                    ▶️ TOCAR
+                </button>
+                <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" value="50">
+            </div>
         </div>
-        <div class="bg-green-50 rounded-lg p-4">
-          <h3 class="font-semibold text-green-800 mb-2">📚 Metodologia</h3>
-          <p class="text-gray-700 text-sm">
-            Utilizar IA para gerar ideias e exemplos, focando na compreensão teórica dos conceitos e aplicação prática.
-          </p>
-        </div>
-        <div class="bg-yellow-50 rounded-lg p-4 md:col-span-2">
-          <h3 class="font-semibold text-yellow-800 mb-2">🧠 Mente Saudável</h3>
-          <ul class="space-y-2 text-gray-700 text-sm">
-            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Read the Bible</li>
-            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> No fap</li>
-            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> No 4 apps</li>
-            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Tratamento Bipolar</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    </header>
 
-    <!-- Acompanhamento Semanal -->
-    <section class="section-card bg-white rounded-xl shadow-lg p-6">
-      <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-        <span
-          class="bg-indigo-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">3</span>
-        Acompanhamento Semanal
-      </h2>
+    <div class="container mx-auto px-4 pb-8">
+        <!-- Dashboard do Aventureiro -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <!-- Pergaminhos Concluídos -->
+            <div class="parchment-card p-6 text-center float">
+                <h3 class="font-medieval text-xl text-leather mb-2 text-shadow-medium">PERGAMINHOS</h3>
+                <div class="text-4xl font-bold text-parchment text-shadow-strong">
+                    <span id="completed-certificates">0</span>/27
+                </div>
+                <div class="w-full bg-gray-300 rounded-full h-3 mt-3">
+                    <div id="progress-bar" class="bg-gradient-to-r from-gold to-yellow-400 h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
+                </div>
+            </div>
 
+            <!-- XP e Nível -->
+            <div class="parchment-card p-6 text-center float" style="animation-delay: 0.2s;">
+                <h3 class="font-medieval text-xl text-leather mb-2 text-shadow-medium">EXPERIÊNCIA</h3>
+                <div class="text-3xl font-bold text-parchment text-shadow-strong">
+                    <span id="total-xp">0</span> XP
+                </div>
+                <div class="mt-2">
+                    <div class="bg-leather text-gold px-3 py-1 rounded-full inline-block text-sm font-medieval">
+                        NÍVEL <span id="user-level">1</span>
+                    </div>
+                </div>
+                <div id="level-title" class="font-medieval text-sm text-parchment mt-2 text-shadow-light">INICIANTE</div>
+                <div class="w-full bg-gray-300 rounded-full h-2 mt-2">
+                    <div id="xp-bar" class="bg-gradient-to-r from-purple-500 to-purple-700 h-2 rounded-full transition-all duration-500" style="width: 0%"></div>
+                </div>
+            </div>
 
+            <!-- Ritmo de Progresso -->
+            <div class="parchment-card p-6 text-center float" style="animation-delay: 0.4s;">
+                <h3 class="font-medieval text-xl text-leather mb-2 text-shadow-medium">RITMO</h3>
+                <div class="text-2xl mb-2">
+                    <span id="pace-icon">🟡</span>
+                </div>
+                <div id="pace-status" class="font-medieval text-lg text-parchment font-bold text-shadow-medium">EM DIA</div>
+                <div id="pace-description" class="text-sm text-parchment-light mt-1 text-shadow-light">Mantendo o ritmo ideal</div>
+            </div>
 
-
-
-      <div class="grid gap-6">
-        <!-- Semana 1 -->
-        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-200">
-          <h3 class="text-lg font-bold mb-4 text-blue-800 flex items-center">
-            🔴Semana 1 <br>📅(3-10)
-            <span id="week1-progress" class="ml-auto text-sm bg-blue-100 px-3 py-1 rounded-full">0/0</span>
-          </h3>
-          <div id="semana1-tarefas" class="grid md:grid-cols-2 gap-3">
-            <!-- Tarefas da Semana 1 -->
-          </div>
-        </div>
-
-
-
-        <!-- Semana 2 -->
-        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-200">
-          <h3 class="text-lg font-bold mb-4 text-blue-800 flex items-center">
-            🔴Semana 2 <br>📅(10-17)
-            <span id="week2-progress" class="ml-auto text-sm bg-blue-100 px-3 py-1 rounded-full">0/0</span>
-          </h3>
-          <div id="semana2-tarefas" class="grid md:grid-cols-2 gap-3">
-            <!-- Tarefas da Semana 2 -->
-          </div>
-        </div>
-
-
-        <!-- Semana 3 -->
-        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-200">
-          <h3 class="text-lg font-bold mb-4 text-blue-800 flex items-center">
-            🔴Semana 3 <br>📅(17-24)
-            <span id="week3-progress" class="ml-auto text-sm bg-blue-100 px-3 py-1 rounded-full">0/0</span>
-          </h3>
-          <div id="semana3-tarefas" class="grid md:grid-cols-2 gap-3">
-            <!-- Tarefas da Semana 2 -->
-          </div>
+            <!-- Contador Regressivo -->
+            <div class="parchment-card p-6 text-center float glow" style="animation-delay: 0.6s;">
+                <h3 class="font-medieval text-xl text-leather mb-2 text-shadow-medium">TEMPO RESTANTE</h3>
+                <div id="countdown" class="text-2xl font-bold text-parchment text-shadow-strong">CALCULANDO...</div>
+                <div class="text-sm text-parchment-light mt-2 text-shadow-light">até a conquista final</div>
+            </div>
         </div>
 
-        <!-- Semana 4 -->
-        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-200">
-          <h3 class="text-lg font-bold mb-4 text-blue-800 flex items-center">
-            🔴Semana 4 <br>📅(24-31)
-            <span id="week4-progress" class="ml-auto text-sm bg-blue-100 px-3 py-1 rounded-full">0/0</span>
-          </h3>
-          <div id="semana4-tarefas" class="grid md:grid-cols-2 gap-3">
-            <!-- Tarefas da Semana 2 -->
-          </div>
+        <!-- Controles -->
+        <div class="text-center mb-8">
+            <button id="add-certificate" class="medieval-btn px-8 py-3 rounded-lg mr-4 font-medieval text-lg">
+                ➕ ADICIONAR PERGAMINHO
+            </button>
+            <button id="remove-certificate" class="medieval-btn px-8 py-3 rounded-lg font-medieval text-lg">
+                ➖ REMOVER PERGAMINHO
+            </button>
         </div>
 
+        <!-- Mapa da Jornada -->
+        <div class="parchment-card p-6 mb-8">
+            <h2 class="font-decorative text-2xl text-center text-leather mb-6 text-shadow-medium">
+                🗺️ MAPA DA JORNADA
+            </h2>
+            <div id="progress-trail" class="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-9 gap-3 justify-items-center">
+                <!-- Certificados serão gerados dinamicamente -->
+            </div>
+        </div>
 
-      </div>
-    </section>
+        <!-- Salão dos Heróis -->
+        <div class="parchment-card p-6 mb-8">
+            <h2 class="font-decorative text-2xl text-center text-leather mb-6 text-shadow-medium">
+                🏆 SALÃO DOS HERÓIS
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Bronze -->
+                <div id="achievement-bronze" class="achievement-locked text-center p-4 border-2 border-gray-400 rounded-lg">
+                    <div class="text-4xl mb-2">🥉</div>
+                    <div class="font-medieval text-lg text-parchment text-shadow-medium">BRONZE</div>
+                    <div class="text-sm text-parchment-light text-shadow-light">5 Pergaminhos</div>
+                    <div class="achievement-status text-xs text-gray-500 mt-1">BLOQUEADO</div>
+                </div>
 
-  </main>
+                <!-- Prata -->
+                <div id="achievement-silver" class="achievement-locked text-center p-4 border-2 border-gray-400 rounded-lg">
+                    <div class="text-4xl mb-2">🥈</div>
+                    <div class="font-medieval text-lg text-parchment text-shadow-medium">PRATA</div>
+                    <div class="text-sm text-parchment-light text-shadow-light">10 Pergaminhos</div>
+                    <div class="achievement-status text-xs text-gray-500 mt-1">BLOQUEADO</div>
+                </div>
 
-  <footer class="bg-gray-800 text-white text-center py-8 mt-12">
-    <div class="max-w-6xl mx-auto px-6">
-      <p class="text-lg font-medium">&copy; 2025 Meu Futuro na TI</p>
-      <p class="text-gray-400 mt-2">Preparação para o mercado de trabalho em Front-End</p>
+                <!-- Ouro -->
+                <div id="achievement-gold" class="achievement-locked text-center p-4 border-2 border-gray-400 rounded-lg">
+                    <div class="text-4xl mb-2">🥇</div>
+                    <div class="font-medieval text-lg text-parchment text-shadow-medium">OURO</div>
+                    <div class="text-sm text-parchment-light text-shadow-light">20 Pergaminhos</div>
+                    <div class="achievement-status text-xs text-gray-500 mt-1">BLOQUEADO</div>
+                </div>
+
+                <!-- Diamante -->
+                <div id="achievement-diamond" class="achievement-locked text-center p-4 border-2 border-gray-400 rounded-lg">
+                    <div class="text-4xl mb-2">💎</div>
+                    <div class="font-medieval text-lg text-parchment text-shadow-medium">DIAMANTE</div>
+                    <div class="text-sm text-parchment-light text-shadow-light">27 Pergaminhos</div>
+                    <div class="achievement-status text-xs text-gray-500 mt-1">BLOQUEADO</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Destino Final -->
+        <div class="parchment-card p-8 text-center">
+            <h2 class="font-decorative text-3xl text-leather mb-4 text-shadow-strong">
+                🏰 DESTINO FINAL
+            </h2>
+            <p class="font-parchment text-xl text-parchment mb-4 text-shadow-medium">
+                "Sair do pedágio e começar a trabalhar como desenvolvedor freelancer ou CLT"
+            </p>
+            <div class="text-6xl mb-4">🚀</div>
+            <p class="font-medieval text-lg text-parchment-light text-shadow-light">
+                Conquiste todos os 27 pergaminhos até <strong class="text-gold">31 de agosto de 2025</strong> e torne-se um <strong class="text-gold">ARQUIMAGO</strong> do desenvolvimento!
+            </p>
+        </div>
     </div>
-  </footer>
 
-  <script src="tarefas.js"></script>
-  <script src="script.js"></script>
- 
+    <!-- Modal de Conquista -->
+    <div id="achievement-modal" class="achievement-modal fixed inset-0 hidden items-center justify-center p-4">
+        <div class="achievement-content max-w-md w-full p-8 text-center">
+            <div id="achievement-icon" class="text-8xl mb-4">🏆</div>
+            <h3 id="achievement-title" class="font-decorative text-2xl text-leather mb-4 text-shadow-strong">CONQUISTA DESBLOQUEADA!</h3>
+            <p id="achievement-description" class="font-parchment text-lg text-parchment mb-6 text-shadow-medium">Parabéns pela sua dedicação!</p>
+            <button id="close-modal" class="medieval-btn px-6 py-3 rounded-lg font-medieval">
+                CONTINUAR JORNADA
+            </button>
+        </div>
+    </div>
+
+    <script src="src/js/app.js"></script>
 </body>
-
 </html>
+
