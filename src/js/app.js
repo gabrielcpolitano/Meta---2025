@@ -37,7 +37,6 @@ let gameState = {
 // Elementos do DOM
 const elements = {
     completedCertificates: document.getElementById('completed-certificates'),
-    progressBar: document.getElementById('progress-bar'),
     totalXp: document.getElementById('total-xp'),
     xpBar: document.getElementById('xp-bar'),
     userLevel: document.getElementById('user-level'),
@@ -489,11 +488,7 @@ function updateDisplay() {
             elements.completedCertificates.textContent = gameState.completedCertificates;
         }
         
-        // Barra de progresso dos pergaminhos
-        if (elements.progressBar) {
-            const progressPercentage = Math.min((gameState.completedCertificates / TOTAL_CERTIFICATES) * 100, 100);
-            elements.progressBar.style.width = progressPercentage + '%';
-        }
+        // Barra de progresso removida - apenas contador mantido
         
         // XP total
         if (elements.totalXp) {
