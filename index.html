@@ -335,6 +335,83 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
         }
         
+        /* Estados de conquistas */
+        .achievement-locked {
+            opacity: 0.6;
+            filter: grayscale(80%);
+            transition: all 0.3s ease;
+        }
+        
+        .achievement-unlocked {
+            opacity: 1;
+            filter: grayscale(0%);
+            animation: achievement-glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes achievement-glow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+                transform: scale(1.05);
+            }
+        }
+        
+        /* Animação de aparecer */
+        @keyframes achievement-appear {
+            0% {
+                transform: scale(0.5) rotate(-10deg);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2) rotate(5deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+        
+        /* Melhorias nos certificados */
+        .certificate-pending {
+            background: linear-gradient(135deg, #696969 0%, #2f4f4f 100%);
+            border: 2px solid #555;
+            color: #ccc;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .certificate-completed {
+            background: linear-gradient(135deg, #228b22 0%, #32cd32 50%, #228b22 100%);
+            border: 2px solid #ffd700;
+            color: #f4f1e8;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .certificate-completed::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: certificate-shine 2s ease-in-out infinite;
+        }
+        
+        @keyframes certificate-shine {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: 100%; }
+        }
+        
         /* Responsividade */
         @media (max-width: 768px) {
             .parchment-card {
