@@ -368,7 +368,7 @@ function updateDisplay() {
     // Certificados concluídos
     elements.completedCertificates.textContent = gameState.completedCertificates;
     
-    // Barra de progresso
+    // Barra de progresso dos pergaminhos
     const progressPercentage = (gameState.completedCertificates / TOTAL_CERTIFICATES) * 100;
     elements.progressBar.style.width = progressPercentage + '%';
     
