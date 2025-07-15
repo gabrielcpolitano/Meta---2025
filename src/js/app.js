@@ -2,7 +2,7 @@
 // Configurações do jogo
 const TOTAL_CERTIFICATES = 27;
 const XP_PER_CERTIFICATE = 100;
-const TARGET_DATE = new Date('2025-08-31');
+const TARGET_DATE = new Date('2025-11-30');
 
 // Níveis do sistema RPG
 const LEVELS = [
