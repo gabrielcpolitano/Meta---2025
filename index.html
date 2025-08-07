@@ -50,7 +50,7 @@
       }
 
       const dia = parseInt(partes[0], 10);
-      const mes = parseInt(partes[1], 10) - 1; // meses começam do zero
+      const mes = parseInt(partes[1], 10) - 1;
       const ano = parseInt(partes[2], 10);
       const dataSelecionada = new Date(ano, mes, dia);
 
@@ -65,7 +65,8 @@
       const totalDiasAulas = Math.floor((fimAulas - dataInicio) / (1000 * 60 * 60 * 24));
       const totalDiasMentorias = Math.floor((fimMentorias - dataInicio) / (1000 * 60 * 60 * 24));
 
-      const aulasDia = 650 / totalDiasAulas;
+      // Atualizado: fixando 8 aulas por dia
+      const aulasDia = 6;
       const exerciciosDia = 200 / totalDiasAulas;
       const mentoriasDia = 163 / totalDiasMentorias;
 

@@ -1,0 +1,3 @@
+Aulas: 32
+Exercicios: 9
+Mentoria: 14
