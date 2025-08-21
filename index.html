@@ -73,14 +73,14 @@
       const aulasDeveriaTerFeito = Math.max(0, Math.round(diasDesdeInicio * aulasDia));
       const exerciciosDeveriaTerFeito = Math.max(0, Math.round(diasDesdeInicio * exerciciosDia));
       const mentoriasDeveriaTerFeito = Math.max(0, Math.round(diasDesdeInicio * mentoriasDia));
-
+      
       document.getElementById("resultado").classList.remove("hidden");
       document.getElementById("resultado").innerHTML = `
         <h2 class="text-xl font-semibold mb-2">📅 Resultado para ${formatarDataBR(dataSelecionada)}</h2>
         <ul class="space-y-2">
           <li>📖 Aulas que deveria ter feito: <span class="font-bold text-blue-600">${aulasDeveriaTerFeito}</span></li>
           <li>💻 Exercícios que deveria ter feito: <span class="font-bold text-green-600">${exerciciosDeveriaTerFeito}</span></li>
-          //<li>🎓 Mentorias que deveria ter feito: <span class="font-bold text-purple-600">${mentoriasDeveriaTerFeito}</span></li>
+          <!-- <li>🎓 Mentorias que deveria ter feito: <span class="font-bold text-purple-600">${mentoriasDeveriaTerFeito}</span></li> -->
           <li>💍 Dias restantes para o casamento: <span class="font-bold text-pink-600">${diasParaCasamento}</span></li>
         </ul>
       `;
